@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JACKPOT WIRE — Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="brand">JACKPOT WIRE · Admin</div>
+    <button class="btn ghost hidden" id="logoutBtn">Log out</button>
+  </div>
+
+  <!-- ---------- LOGIN ---------- -->
+  <div class="admin-wrap" id="loginView">
+    <div class="panel">
+      <h3>Admin login</h3>
+      <div class="field">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" autocomplete="username">
+      </div>
+      <div class="field">
+        <label for="loginPass">Password</label>
+        <input id="loginPass" type="password" autocomplete="current-password">
+      </div>
+      <button class="btn" id="loginBtn">Log in</button>
+      <div class="msg" id="loginMsg"></div>
+    </div>
+  </div>
+
+  <!-- ---------- ADMIN PANEL (hidden until logged in) ---------- -->
+  <div class="admin-wrap hidden" id="panelView">
+
+    <div class="panel">
+      <h3>Post a new win</h3>
+      <div class="row-2">
+        <div class="field"><label>Username</label><input id="winUsername" type="text" placeholder="vikingman"></div>
+        <div class="field"><label>Game</label><input id="winGame" type="text" placeholder="Big Bass Football Bonanza"></div>
+      </div>
+      <div class="row-2">
+        <div class="field"><label>Wager ($)</label><input id="winWager" type="number" step="0.01" placeholder="50.00"></div>
+        <div class="field"><label>Multiplier (x)</label><input id="winMultiplier" type="number" step="0.01" placeholder="777.80"></div>
+      </div>
+      <div class="row-2">
+        <div class="field"><label>Payout ($)</label><input id="winPayout" type="number" step="0.01" placeholder="38889.61"></div>
+        <div class="field"><label>Avatar / screenshot URL (optional)</label><input id="winAvatar" type="text" placeholder="https://..."></div>
+      </div>
+      <button class="btn" id="postWinBtn">Post win</button>
+      <div class="msg" id="winMsg"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Recent wins</h3>
+      <div id="winsList"><div class="msg">Loading…</div></div>
+    </div>
+
+    <div class="panel">
+      <h3>Leaderboard settings</h3>
+      <div class="row-2">
+        <div class="field"><label>Prize pool</label><input id="lbPool" type="text" placeholder="$1,000,000.00"></div>
+        <div class="field"><label>Ends at (local time)</label><input id="lbEndsAt" type="datetime-local"></div>
+      </div>
+      <button class="btn" id="saveMetaBtn">Save settings</button>
+      <div class="msg" id="metaMsg"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Add / update leaderboard row</h3>
+      <div class="row-2">
+        <div class="field"><label>Place</label><input id="lbPlace" type="number" min="1" placeholder="1"></div>
+        <div class="field"><label>Player</label><input id="lbPlayer" type="text" placeholder="TyrlhaReborn"></div>
+      </div>
+      <div class="row-2">
+        <div class="field"><label>Points</label><input id="lbPoints" type="number" step="0.01" placeholder="6989976.09"></div>
+        <div class="field"><label>Prize</label><input id="lbPrize" type="text" placeholder="$350,000.00"></div>
+      </div>
+      <button class="btn" id="saveRowBtn">Save row</button>
+      <div class="msg" id="rowMsg"></div>
+    </div>
+
+    <div class="panel">
+      <h3>Current leaderboard</h3>
+      <div id="lbList"><div class="msg">Loading…</div></div>
+    </div>
+
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="admin.js"></script>
+</body>
+</html>

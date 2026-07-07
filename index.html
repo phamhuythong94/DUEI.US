@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JACKPOT WIRE — Live Big Wins &amp; Leaderboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="ticker-wrap">
+    <div class="ticker" id="tickerTrack"><span>Loading recent wins…</span></div>
+  </div>
+
+  <header class="hero">
+    <div class="eyebrow">Live payout wire</div>
+    <h1>JACKPOT&nbsp;WIRE</h1>
+    <p class="sub">Real wins, real screenshots, updated by hand. Independent community page — not the official site of any game provider.</p>
+  </header>
+
+  <!-- ---------- REGISTER CTA ---------- -->
+  <div class="cta-band">
+    <div class="cta-card">
+      <div class="cta-eyebrow">Free slot bonus</div>
+      <h2>Sign up and grab your free slot</h2>
+      <p>Create an account to claim a free spin bonus. 18+ only — please play responsibly and only wager what you can afford to lose.</p>
+      <a class="cta-btn" id="registerBtn" href="#" target="_blank" rel="noopener">Register now</a>
+      <div class="cta-fine">Terms apply. This page may earn a referral reward when you sign up.</div>
+    </div>
+  </div>
+
+  <!-- ---------- WINS FEED ---------- -->
+  <div class="section-label">Wins feed</div>
+  <div class="controls">
+    <button data-sort="newest" class="active">Newest</button>
+    <button data-sort="biggest">Biggest win</button>
+    <button data-sort="multiplier">Highest multiplier</button>
+  </div>
+  <main class="grid" id="grid">
+    <div class="empty">Loading…</div>
+  </main>
+
+  <!-- ---------- LEADERBOARD ---------- -->
+  <div class="section-label">Leaderboard</div>
+  <div class="lb-wrap">
+    <div class="lb-top">
+      <div class="lb-pool">
+        <div class="lbl">Prize pool</div>
+        <div class="val" id="prizePool">—</div>
+      </div>
+      <div class="lb-countdown" id="countdown">
+        <div><div class="num" id="cdDays">00</div><div class="u">Days</div></div>
+        <div><div class="num" id="cdHours">00</div><div class="u">Hours</div></div>
+        <div><div class="num" id="cdMins">00</div><div class="u">Min</div></div>
+        <div><div class="num" id="cdSecs">00</div><div class="u">Sec</div></div>
+      </div>
+    </div>
+    <table class="lb">
+      <thead>
+        <tr><th>Place</th><th>Player</th><th style="text-align:right">Points</th><th style="text-align:right">Prize</th></tr>
+      </thead>
+      <tbody id="lbBody">
+        <tr><td colspan="4" class="empty">Loading…</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <footer>JACKPOT WIRE · independent community page · not officially affiliated with any game provider · 18+ · gamble responsibly</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="public.js"></script>
+</body>
+</html>
